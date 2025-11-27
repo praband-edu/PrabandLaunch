@@ -200,7 +200,7 @@ export default function CalculatorSection() {
                                     transition={{ duration: 0.4 }}
                                     className="text-xl font-semibold text-white"
                                 >
-                                    You're losing ~{calculations.monthlyHours} hours/month to repetitive tasks.
+                                    You&apos;re losing ~{calculations.monthlyHours} hours/month to repetitive tasks.
                                 </motion.p>
                                 <motion.p
                                     key={calculations.monthlyCost}
@@ -209,7 +209,7 @@ export default function CalculatorSection() {
                                     transition={{ duration: 0.4, delay: 0.1 }}
                                     className="text-xl font-semibold text-white"
                                 >
-                                    That's Rs. {calculations.monthlyCost.toLocaleString('en-IN')}/month in time costs.
+                                    That&apos;s Rs. {calculations.monthlyCost.toLocaleString(&apos;en-IN&apos;)}/month in time costs.
                                 </motion.p>
                             </div>
                         </motion.div>

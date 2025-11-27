@@ -142,7 +142,7 @@ export default function ProcessSection() {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 bg-[#003459] rounded-2xl p-5 shadow-2xl"
                         >
-                            <h4 className="text-white text-sm font-semibold mb-4">Today's Schedule</h4>
+                            <h4 className="text-white text-sm font-semibold mb-4">Today&apos;s Schedule</h4>
                             <div className="space-y-3">
                                 {[
                                     { color: 'bg-green-400', label: 'Mathematics', time: '9:00 AM' },
@@ -262,7 +262,7 @@ export default function ProcessSection() {
                     <div className="flex-1">
                         <h3 className="text-2xl 2xl:text-3xl font-bold text-gray-900 mb-3">AI-Powered Analytics</h3>
                         <p className="text-gray-500 2xl:text-lg max-w-md">
-                            Get intelligent insights and predictions to make data-driven decisions for your institute's growth.
+                            Get intelligent insights and predictions to make data-driven decisions for your institute&apos;s growth.
                         </p>
                     </div>
 
@@ -392,7 +392,7 @@ export default function ProcessSection() {
                         </div>
                         <h4 className="text-lg 2xl:text-xl font-bold text-gray-900 mb-2">Fast adoption</h4>
                         <p className="text-gray-500 text-sm 2xl:text-base leading-relaxed">
-                            Prabhand's clean workflows make it easy for educators and staff to jump in and get value quickly.
+                            Prabhand&apos;s clean workflows make it easy for educators and staff to jump in and get value quickly.
                         </p>
                     </motion.div>
 

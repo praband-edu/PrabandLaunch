@@ -64,7 +64,7 @@ const FAQSection = () => {
           style={{ willChange: "transform, opacity" }}
           className="text-center mb-12 md:mb-16"
         >
-          {/* FAQ's Pill */}
+          {/* FAQ&apos;s Pill */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -74,7 +74,7 @@ const FAQSection = () => {
             className="inline-flex items-center justify-center mb-6"
           >
             <span className="bg-[#003459] text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide">
-              FAQ's
+              FAQ&apos;s
             </span>
           </motion.div>
           

@@ -108,7 +108,7 @@ const AiSupplyPage = () => {
                 Automate High-Frequency Workflows
               </h3>
               <p className="text-[#6B7280] leading-relaxed text-lg 2xl:text-xl font-light">
-                AI Supply agents break down complex tasks into clear, traceable steps. Eliminate repetitive work and scale your team's output with unmatched efficiency and precision.
+                AI Supply agents break down complex tasks into clear, traceable steps. Eliminate repetitive work and scale your team&apos;s output with unmatched efficiency and precision.
               </p>
             </div>
           </motion.div>
@@ -140,7 +140,7 @@ const AiSupplyPage = () => {
                 with Reliable Autonomy
               </h2>
               <p className="text-[#6B7280] leading-relaxed text-lg 2xl:text-xl font-light mb-10 max-w-md">
-                Our agents don't just assist — they complete tasks end-to-end with accountability and speed. Track progress, refine outputs, and get results faster.
+                Our agents don&apos;t just assist — they complete tasks end-to-end with accountability and speed. Track progress, refine outputs, and get results faster.
               </p>
               
               <div className="flex items-center gap-8">

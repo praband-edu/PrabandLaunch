@@ -63,7 +63,7 @@ const ContactSection = () => {
               <span className="text-[#ffffff] text-sm">Contact Form</span>
               
               <h2 className="text-[32px] md:text-[48px] 2xl:text-[60px] leading-[1.1] font-bold text-white mt-4 mb-8">
-                Let's transform<br />
+                Let&apos;s transform<br />
                 your institute{' '}
                 <span className="text-[#007ea7] italic">together</span>
               </h2>
@@ -108,7 +108,7 @@ const ContactSection = () => {
               className="w-full md:w-1/2"
             >
               <div className="bg-white rounded-2xl p-6 md:p-8">
-                <label className="text-gray-900 font-medium">I'm interested in...</label>
+                <label className="text-gray-900 font-medium">I&apos;m interested in...</label>
                 
                 <div className="flex flex-wrap gap-3 mt-4 mb-8">
                   {serviceOptions.map((option) => (
