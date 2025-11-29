@@ -617,7 +617,7 @@ function MetricCard({ icon, value, label, trend }: { icon: React.ReactNode; valu
     <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
       <div className="flex items-center gap-2 mb-2">
         <div className="p-1.5 rounded-md bg-[#00a7e1] text-white">
-          {React.cloneElement(icon as React.ReactElement<any>, { className: "w-3 h-3" })}
+          {React.cloneElement(icon as React.ReactElement<{ className?: string }>, { className: "w-3 h-3" })}
         </div>
         <span className="text-[10px] text-slate-500">{label}</span>
       </div>
@@ -634,7 +634,7 @@ function FeatureCard({ icon, title, items, progress }: { icon: React.ReactNode; 
     <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
       <div className="flex items-center gap-2 mb-2">
         <div className="p-1.5 rounded-md bg-[#00a7e1] text-white">
-          {React.cloneElement(icon as React.ReactElement<any>, { className: "w-3 h-3" })}
+          {React.cloneElement(icon as React.ReactElement<{ className?: string }>, { className: "w-3 h-3" })}
         </div>
         <span className="text-xs font-semibold text-slate-700">{title}</span>
       </div>

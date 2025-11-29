@@ -507,7 +507,7 @@ export default function StickyFeatureSection() {
                         </div>
                         <h4 className="font-bold text-gray-900 mb-2">Shakespearean Tragedy Quote</h4>
                         <p className="text-sm text-gray-700 mb-3">
-                          Which of William Shakespeare's tragedies features the famous soliloquy that begins with the line, 'To be, or not to be, that is the question'?
+                          Which of William Shakespeare&apos;s tragedies features the famous soliloquy that begins with the line, &apos;To be, or not to be, that is the question&apos;?
                         </p>
                         <div className="space-y-2 mb-3">
                           {['A. Romeo and Juliet', 'B. Othello', 'C. Hamlet', 'D. Macbeth'].map((opt) => (

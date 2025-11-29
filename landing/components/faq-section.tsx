@@ -89,7 +89,7 @@ export default function FAQSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Can't find the question you're looking for? Post on our{" "}
+          Can&apos;t find the question you&apos;re looking for? Post on our{" "}
           <a href="#" className="text-[#00a7e1] hover:text-[#007ea7] underline font-medium">
             community forum
           </a>{" "}

@@ -108,8 +108,8 @@ export default function SecuritySection() {
                   Your Data. Your Control.
                 </h3>
                 <p className="text-gray-300 text-base leading-relaxed mb-8">
-                  Praband ensures that every institution's data is private, isolated, and uncompromised. 
-                  Whether you're a school owner or a solo educator, your academic content stays yours — always.
+                  Praband ensures that every institution&apos;s data is private, isolated, and uncompromised. 
+                  Whether you&apos;re a school owner or a solo educator, your academic content stays yours — always.
                 </p>
               </div>
               

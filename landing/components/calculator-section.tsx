@@ -182,7 +182,7 @@ export default function CalculatorSection() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                You're losing ~{displayHours.toLocaleString()} hours/month to repetitive tasks.
+                You&apos;re losing ~{displayHours.toLocaleString()} hours/month to repetitive tasks.
               </motion.p>
               <motion.p 
                 className="text-xl md:text-2xl font-semibold"
@@ -191,7 +191,7 @@ export default function CalculatorSection() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                That's Rs. {displayCost.toLocaleString()}/month in time costs.
+                That&apos;s Rs. {displayCost.toLocaleString()}/month in time costs.
               </motion.p>
             </div>
           </motion.div>

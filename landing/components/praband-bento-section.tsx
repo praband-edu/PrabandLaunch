@@ -114,7 +114,7 @@ export default function ProductivitySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From tuition teachers to large colleges, Praband adapts to your institution's
+            From tuition teachers to large colleges, Praband adapts to your institution&apos;s
             unique needs with 11 powerful modules working seamlessly together.
           </motion.p>
         </motion.div>

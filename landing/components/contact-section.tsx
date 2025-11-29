@@ -97,7 +97,7 @@ export default function ContactSection() {
                 Contact Form
               </h2>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-                Let's transform your institute{" "}
+                Let&apos;s transform your institute{" "}
                 <span className="text-[#00a7e1]">together</span>
               </h1>
             </motion.div>
@@ -211,7 +211,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              I'm interested in...
+              I&apos;m interested in...
             </motion.h2>
 
             {/* Inquiry Type Buttons */}

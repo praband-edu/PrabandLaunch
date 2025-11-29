@@ -52,13 +52,11 @@ export const staggerContainer = {
 // Default animation transition
 export const defaultTransition = {
   duration: 0.6,
-  ease: [0.6, -0.05, 0.01, 0.99],
 };
 
 // Quick transition
 export const quickTransition = {
   duration: 0.3,
-  ease: "easeOut",
 };
 
 // Scroll-triggered animation options
@@ -66,7 +64,7 @@ export const scrollReveal = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6 },
 };
 
 // Scroll-triggered with stagger
