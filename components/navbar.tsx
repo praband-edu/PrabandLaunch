@@ -128,34 +128,68 @@ export default function Navbar() {
       e.preventDefault();
       const section = href.substring(1);
       setActiveSection(section);
-      const element = document.querySelector(href);
-      if (element) {
-        const offset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      // Close mobile menu first if it's open
+      const wasMenuOpen = isMobileMenuOpen;
+      if (wasMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+      
+      // Wait for menu animation to complete before scrolling
+      const scrollToSection = () => {
+        const element = document.querySelector(href);
+        if (element) {
+          const offset = 100;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
 
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      };
+      
+      // If menu was open, wait for animation to complete, otherwise scroll immediately
+      if (wasMenuOpen) {
+        setTimeout(scrollToSection, 250); // Wait for menu close animation (200ms + buffer)
+      } else {
+        scrollToSection();
+      }
+    } else {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    
+    // Close mobile menu first if it's open
+    const wasMenuOpen = isMobileMenuOpen;
+    if (wasMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+    
+    // Wait for menu animation to complete before scrolling
+    const scrollToContact = () => {
+      const contactSection = document.querySelector("#contact");
+      if (contactSection) {
+        const offset = 100;
+        const elementPosition = contactSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
         window.scrollTo({
           top: offsetPosition,
           behavior: "smooth",
         });
       }
+    };
+    
+    // If menu was open, wait for animation to complete, otherwise scroll immediately
+    if (wasMenuOpen) {
+      setTimeout(scrollToContact, 250); // Wait for menu close animation (200ms + buffer)
+    } else {
+      scrollToContact();
     }
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const contactSection = document.querySelector("#contact");
-    if (contactSection) {
-      const offset = 100;
-      const elementPosition = contactSection.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-    setIsMobileMenuOpen(false);
   };
 
   // Determine if navbar should use light or dark theme based on upcoming section
