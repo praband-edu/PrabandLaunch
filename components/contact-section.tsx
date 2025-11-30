@@ -95,9 +95,6 @@ export default function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl font-semibold text-white mb-8">
-                Contact Form
-              </h2>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
                 Let&apos;s transform your institute{" "}
                 <span className="text-[#00a7e1]">together</span>

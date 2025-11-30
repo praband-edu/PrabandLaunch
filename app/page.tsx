@@ -46,6 +46,7 @@ export default function Home() {
           <AnalyticsSection />
           <PrabandBentoSection />
           <StickyFeatureSection />
+          <RoleFeaturesSection />
           <InstitutionsSection />
           <CalculatorSection />
           <SecuritySection />

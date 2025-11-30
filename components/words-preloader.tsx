@@ -11,7 +11,21 @@ export function WordsPreloader() {
   // Load greetings from config on mount
   useEffect(() => {
     if (config.loaderText && config.loaderText.length > 0) {
-      setGreetings(config.loaderText);
+      // Randomly select one greeting set
+      const randomIndex = Math.floor(Math.random() * config.loaderText.length);
+      const selectedGreeting = config.loaderText[randomIndex];
+      
+      // Extract the 3 parts from the selected greeting object
+      if (selectedGreeting && typeof selectedGreeting === 'object') {
+        setGreetings([
+          selectedGreeting.part1 || "",
+          selectedGreeting.part2 || "",
+          selectedGreeting.part3 || ""
+        ]);
+      } else {
+        // Fallback for old format (flat array)
+        setGreetings(Array.isArray(selectedGreeting) ? selectedGreeting : ["Welcome", "To", "Praband!"]);
+      }
     } else {
       // Fallback if config is empty
       setGreetings(["Welcome", "To", "Praband!"]);

@@ -79,7 +79,7 @@ export default function ProductivitySection() {
   };
 
   return (
-    <section id="features" className="bg-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 font-sans text-slate-900 scroll-mt-20">
+    <section id="features" className="bg-white pt-12 sm:pt-16 lg:pt-24 pb-2 sm:pb-4 lg:pb-6 px-4 sm:px-6 lg:px-8 font-sans text-slate-900 scroll-mt-20">
       <div className="max-w-[1200px] mx-auto">
         {/* Header Section */}
         <motion.div 

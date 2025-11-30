@@ -170,7 +170,7 @@ export default function StickyFeatureSection() {
   // Mobile version - simple stacked layout
   if (isMobile) {
     return (
-      <div id="intelligent-features" className="bg-white scroll-mt-20 py-16">
+      <div id="intelligent-features" className="bg-white scroll-mt-20 pt-2 pb-16">
         {/* Header */}
         <div className="text-center px-4 max-w-5xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 bg-white shadow-sm mb-6">
@@ -433,7 +433,7 @@ export default function StickyFeatureSection() {
 
   // Desktop version - parallax scrolling
   return (
-    <div id="intelligent-features" className="bg-white scroll-mt-20">
+    <div id="intelligent-features" className="bg-white scroll-mt-20 pt-2">
       {/* Intro Wrapper - Pinned Text Section */}
       <div
         ref={introRef}

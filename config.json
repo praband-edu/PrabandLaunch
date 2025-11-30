@@ -4,10 +4,10 @@
     "value": "+91 98765 43210"
   },
   "legal": {
-    "enable": true,
+    "enable": false,
     "links": [
       {
-        "label": "Terms of Service",
+        "label": "Terms of Use",
         "href": "/terms"
       },
       {
@@ -36,9 +36,31 @@
     }
   ],
   "loaderText": [
-    "Goooood",
-    "Morninggg",
-    "Maaaaaaam"
+    {
+      "part1": "Goooood",
+      "part2": "Morninggg",
+      "part3": "Maaaaaaam"
+    },
+    {
+      "part1": "Namaste",
+      "part2": "Teacher",
+      "part3": "Jiiii"
+    },
+    {
+      "part1": "Welcome",
+      "part2": "To",
+      "part3": "Praband"
+    },
+    {
+      "part1": "Hello",
+      "part2": "Respected",
+      "part3": "Sirrrr"
+    },
+    {
+      "part1": "Greetings",
+      "part2": "From",
+      "part3": "Praband"
+    }
   ]
 }
 
