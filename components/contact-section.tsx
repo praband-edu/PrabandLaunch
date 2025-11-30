@@ -4,12 +4,14 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { scrollReveal, staggerContainer, slideUp, slideLeft, slideRight, scale } from "@/lib/animations";
+import config from "@/config.json";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     inquiryType: [] as string[],
     name: "",
     email: "",
+    phone: "",
     instituteName: "",
     message: "",
   });
@@ -126,23 +128,25 @@ export default function ContactSection() {
               </motion.div>
 
               {/* Phone */}
-              <motion.div 
-                className="flex items-center gap-4"
-                variants={slideUp}
-                whileHover={{ x: 5, transition: { duration: 0.2 } }}
-              >
-                <motion.a
-                  href="tel:+919876543210"
-                  className="flex items-center gap-3 px-4 py-2 bg-[#00a7e1]/20 hover:bg-[#00a7e1]/30 rounded-full transition-colors group"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+              {config.phone.enable && (
+                <motion.div 
+                  className="flex items-center gap-4"
+                  variants={slideUp}
+                  whileHover={{ x: 5, transition: { duration: 0.2 } }}
                 >
-                  <Phone className="w-5 h-5 text-[#00a7e1] flex-shrink-0" />
-                  <span className="text-lg text-white group-hover:text-[#00a7e1] transition-colors">
-                    +91 98765 43210
-                  </span>
-                </motion.a>
-              </motion.div>
+                  <motion.a
+                    href={`tel:${config.phone.value.replace(/\s/g, '')}`}
+                    className="flex items-center gap-3 px-4 py-2 bg-[#00a7e1]/20 hover:bg-[#00a7e1]/30 rounded-full transition-colors group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Phone className="w-5 h-5 text-[#00a7e1] flex-shrink-0" />
+                    <span className="text-lg text-white group-hover:text-[#00a7e1] transition-colors">
+                      {config.phone.value}
+                    </span>
+                  </motion.a>
+                </motion.div>
+              )}
 
               {/* Location */}
               <motion.div 
@@ -270,6 +274,21 @@ export default function ContactSection() {
                   required
                 />
               </div>
+
+              {/* Phone Number Field */}
+              {config.phone.enable && (
+                <div>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone || ""}
+                    onChange={handleChange}
+                    placeholder="Your phone number"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00a7e1] focus:border-transparent text-gray-900 placeholder-gray-500 transition-all"
+                  />
+                </div>
+              )}
 
               {/* Institute Name Field */}
               <div>

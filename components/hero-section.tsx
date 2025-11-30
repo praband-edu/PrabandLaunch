@@ -5,31 +5,22 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { slideUp, staggerContainer, defaultTransition } from "@/lib/animations";
 import ParticlesBackground from "./particles-background";
-
-// Headline and tagline options
-const headlineOptions = [
-  {
-    headline: "Empowering Institutions with Smarter Learning",
-    tagline: "One connected platform for teaching, testing, analytics, and academic growth.",
-  },
-  {
-    headline: "Transform How Your Institute Manages Learning",
-    tagline: "Digitize classrooms, automate academic workflows, and improve results with real-time insights.",
-  },
-  {
-    headline: "Where Students Learn Better & Teachers Teach Smarter",
-    tagline: "Structured learning, transparent evaluation, and measurable outcomes — all in one LMS.",
-  },
-];
+import config from "@/config.json";
 
 export default function HeroSection() {
   // Use first option as default for SSR, then randomly select on client
-  const [selectedContent, setSelectedContent] = useState(headlineOptions[0]);
+  const [selectedContent, setSelectedContent] = useState(
+    config.header && config.header.length > 0 
+      ? config.header[0] 
+      : { headline: "", tagline: "" }
+  );
 
   useEffect(() => {
     // Randomly select a headline/tagline only on client side
-    const randomIndex = Math.floor(Math.random() * headlineOptions.length);
-    setSelectedContent(headlineOptions[randomIndex]);
+    if (config.header && config.header.length > 0) {
+      const randomIndex = Math.floor(Math.random() * config.header.length);
+      setSelectedContent(config.header[randomIndex]);
+    }
   }, []);
 
   return (

@@ -52,7 +52,7 @@ export default function SecuritySection() {
             transition={{ duration: 0.4 }}
           >
             <Shield className="w-4 h-4 text-slate-600" fill="currentColor" fillOpacity={0.2} />
-            <span className="text-sm font-medium text-slate-700">Security & Privacy</span>
+            <span className="text-sm font-medium text-slate-700">Enterprise Security</span>
           </motion.div>
           <motion.h2 
             className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-slate-900 flex items-center justify-center gap-3"

@@ -7,12 +7,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { href: "#institutions", label: "Institutions" },
-  { href: "#calculator", label: "Calculator" },
-  { href: "#features", label: "Features" },
-  { href: "#intelligent-features", label: "AI Features" },
-  { href: "#role-features", label: "Benefits" },
   { href: "#analytics", label: "Analytics" },
+  { href: "#features", label: "Features" },
+  { href: "#institutions", label: "Institution" },
+  { href: "#calculator", label: "Calculator" },
   { href: "#security", label: "Security" },
   { href: "#faq", label: "FAQs" },
 ];
@@ -21,12 +19,11 @@ const navItems = [
 const sectionBackgrounds: Record<string, 'dark' | 'light'> = {
   'home': 'dark',
   'your-institution': 'light',
-  'institutions': 'light',
-  'calculator': 'light',
+  'analytics': 'light',
   'features': 'light',
   'intelligent-features': 'light',
-  'role-features': 'light',
-  'analytics': 'light',
+  'institutions': 'light',
+  'calculator': 'light',
   'security': 'light',
   'faq': 'light',
   'contact': 'dark',
@@ -35,7 +32,7 @@ const sectionBackgrounds: Record<string, 'dark' | 'light'> = {
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("institutions");
+  const [activeSection, setActiveSection] = useState("analytics");
   const [upcomingSection, setUpcomingSection] = useState<'dark' | 'light'>('light');
 
   useEffect(() => {
@@ -187,7 +184,7 @@ export default function Navbar() {
               if (window.location.pathname === "/") {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
-                setActiveSection("institutions");
+                setActiveSection("analytics");
               }
             }}
           >

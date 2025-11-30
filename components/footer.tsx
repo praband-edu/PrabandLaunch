@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { scrollReveal, staggerContainer, slideUp } from "@/lib/animations";
+import config from "@/config.json";
 
 export default function Footer() {
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -102,18 +103,40 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Copyright Section */}
-        <motion.div 
-          className="border-t border-[#003459] mt-12 pt-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className="text-center text-sm text-gray-300">
-            <p>© 2025 Praband. All rights reserved.</p>
-          </div>
-        </motion.div>
+        {/* Legal Section */}
+        {config.legal.enable && (
+          <motion.div 
+            className="border-t border-[#003459] mt-12 pt-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              {/* Legal Links */}
+              {config.legal.links && config.legal.links.length > 0 && (
+                <div className="flex flex-wrap justify-center md:justify-start gap-6">
+                  {config.legal.links.map((link, index) => (
+                    <Link
+                      key={index}
+                      href={link.href}
+                      className="text-sm text-gray-300 hover:text-[#00a7e1] transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              
+              {/* Copyright */}
+              {config.legal.copyright && (
+                <div className="text-sm text-gray-300 text-center md:text-right">
+                  <p>{config.legal.copyright}</p>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
       </div>
     </footer>
   );

@@ -43,12 +43,11 @@ export default function Home() {
           <Navbar />
           <HeroSection />
           <HeroScrollDemo />
-          <InstitutionsSection />
-          <CalculatorSection />
+          <AnalyticsSection />
           <PrabandBentoSection />
           <StickyFeatureSection />
-          <RoleFeaturesSection />
-          <AnalyticsSection />
+          <InstitutionsSection />
+          <CalculatorSection />
           <SecuritySection />
           <FAQSection />
           <ContactSection />

@@ -92,7 +92,6 @@ export default function FAQSection() {
         >
           {faqs.map((faq) => {
             const isExpanded = expandedId === faq.id;
-            const isFirst = faq.id === 1;
             
             return (
               <motion.div
@@ -108,12 +107,12 @@ export default function FAQSection() {
                 >
                   {/* Icon */}
                   <div className={`flex-shrink-0 w-10 h-10 rounded-lg border flex items-center justify-center ${
-                    isExpanded && isFirst 
+                    isExpanded 
                       ? "bg-[#00a7e1]/20 border-[#00a7e1]/30" 
                       : faq.iconBgColor
                   }`}>
                     <div className={`w-8 h-8 rounded flex items-center justify-center ${
-                      isExpanded && isFirst 
+                      isExpanded 
                         ? "bg-[#00a7e1]" 
                         : "bg-gray-400"
                     }`}>

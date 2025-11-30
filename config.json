@@ -1,0 +1,44 @@
+{
+  "phone": {
+    "enable": true,
+    "value": "+91 98765 43210"
+  },
+  "legal": {
+    "enable": true,
+    "links": [
+      {
+        "label": "Terms of Service",
+        "href": "/terms"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Cookie Policy",
+        "href": "/cookies"
+      }
+    ],
+    "copyright": "© 2025 Praband. All rights reserved."
+  },
+  "header": [
+    {
+      "headline": "Empowering Institutions with Smarter Learning",
+      "tagline": "One connected platform for teaching, testing, analytics, and academic growth."
+    },
+    {
+      "headline": "Transform How Your Institute Manages Learning",
+      "tagline": "Digitize classrooms, automate academic workflows, and improve results with real-time insights."
+    },
+    {
+      "headline": "Where Students Learn Better & Teachers Teach Smarter",
+      "tagline": "Structured learning, transparent evaluation, and measurable outcomes — all in one LMS."
+    }
+  ],
+  "loaderText": [
+    "Goooood",
+    "Morninggg",
+    "Maaaaaaam"
+  ]
+}
+

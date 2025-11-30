@@ -2,31 +2,20 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const greetingSets = [
-  // Original "Good morning maam"
-  ["Goooood", "Morninggg", "Maaaaaaam"],
-  // Creative variation 1
-  ["Namaste", "Teacherrr", "Ji!"],
-  // Creative variation 2
-  ["Hello", "Beautiful", "Mind!"],
-  // Creative variation 3
-  ["Welcome", "To", "Praband!"],
-  // Creative variation 4
-  ["Ready", "To", "Learn?"],
-  // Creative variation 5
-  ["Let's", "Begin", "Today!"],
-];
+import config from "@/config.json";
 
 export function WordsPreloader() {
   const [greetings, setGreetings] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Random greeting selection on mount
+  // Load greetings from config on mount
   useEffect(() => {
-    const randomSet =
-      greetingSets[Math.floor(Math.random() * greetingSets.length)];
-    setGreetings(randomSet);
+    if (config.loaderText && config.loaderText.length > 0) {
+      setGreetings(config.loaderText);
+    } else {
+      // Fallback if config is empty
+      setGreetings(["Welcome", "To", "Praband!"]);
+    }
   }, []);
 
   // Word rotation every 600ms

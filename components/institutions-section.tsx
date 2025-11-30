@@ -28,8 +28,8 @@ export default function InstitutionsSection() {
       icon: Truck,
     },
     {
-      id: "departments",
-      title: "Departments",
+      id: "School",
+      title: "School / University",
       description: "Coordinate departmental activities, manage resources, track academic progress, and streamline administrative tasks.",
       icon: Heart,
     },
