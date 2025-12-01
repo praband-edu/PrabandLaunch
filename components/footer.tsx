@@ -91,10 +91,12 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-[#00a7e1] mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-gray-300">Chandigarh, India</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#00a7e1] mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-gray-300">+91 98765 43210</span>
-              </li>
+              {config.phone.enable && (
+                <li className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 text-[#00a7e1] mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">{config.phone.value}</span>
+                </li>
+              )}
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#00a7e1] mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-gray-300">contact@Praband.in</span>
