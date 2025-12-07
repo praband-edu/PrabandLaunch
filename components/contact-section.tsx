@@ -81,7 +81,7 @@ export default function ContactSection() {
     }
 
     try {
-      const response = await fetch("/api/slack", {
+      const response = await fetch("https://slack-hook.praband.com/api/slack", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

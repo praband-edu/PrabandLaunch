@@ -55,7 +55,7 @@ export default function HeroSection() {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch("/api/slack", {
+      const response = await fetch("https://slack-hook.praband.com/api/slack", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
