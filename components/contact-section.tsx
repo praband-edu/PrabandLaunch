@@ -1,11 +1,19 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { scrollReveal, staggerContainer, slideUp, slideLeft, slideRight, scale } from "@/lib/animations";
 import config from "@/config.json";
-import ReCAPTCHA from "react-google-recaptcha";
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -22,8 +30,43 @@ export default function ContactSection() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+
+  const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+
+  // Load reCAPTCHA v3 script
+  useEffect(() => {
+    if (!RECAPTCHA_SITE_KEY) {
+      console.warn("reCAPTCHA site key is not set");
+      return;
+    }
+
+    // Check if script is already loaded
+    if (window.grecaptcha) {
+      setRecaptchaLoaded(true);
+      return;
+    }
+
+    // Load the script
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      setRecaptchaLoaded(true);
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup: remove script if component unmounts
+      const existingScript = document.querySelector(
+        `script[src*="recaptcha/api.js"]`
+      );
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, [RECAPTCHA_SITE_KEY]);
 
   const inquiryTypes = [
     { value: "demo", label: "Demo Request" },
@@ -61,20 +104,35 @@ export default function ContactSection() {
     });
   };
 
-  const handleCaptchaChange = (token: string | null) => {
-    setCaptchaToken(token);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
-    // Validate captcha
-    if (!captchaToken) {
+    // Execute reCAPTCHA v3
+    let captchaToken: string;
+    try {
+      if (!recaptchaLoaded || !window.grecaptcha) {
+        throw new Error("reCAPTCHA is not loaded. Please refresh the page.");
+      }
+
+      // Wrap grecaptcha.ready in a Promise
+      captchaToken = await new Promise<string>((resolve, reject) => {
+        window.grecaptcha.ready(async () => {
+          try {
+            const token = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
+              action: "submit",
+            });
+            resolve(token);
+          } catch (error) {
+            reject(new Error("Failed to execute reCAPTCHA. Please try again."));
+          }
+        });
+      });
+    } catch (error) {
       setSubmitStatus({
         type: "error",
-        message: "Please complete the reCAPTCHA verification.",
+        message: error instanceof Error ? error.message : "reCAPTCHA verification failed. Please try again.",
       });
       setIsSubmitting(false);
       return;
@@ -120,8 +178,6 @@ export default function ContactSection() {
         instituteName: "",
         message: "",
       });
-      setCaptchaToken(null);
-      recaptchaRef.current?.reset();
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus({
@@ -389,15 +445,12 @@ export default function ContactSection() {
                 />
               </div>
 
-              {/* reCAPTCHA */}
-              <div className="flex justify-center">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LffvSMsAAAAALaPCrtUeI6r_bJpa3eUNasGzos5"}
-                  onChange={handleCaptchaChange}
-                  theme="light"
-                />
-              </div>
+              {/* reCAPTCHA v3 - invisible, runs automatically */}
+              {!RECAPTCHA_SITE_KEY && (
+                <div className="text-sm text-red-600 text-center">
+                  reCAPTCHA site key is not configured
+                </div>
+              )}
 
               {/* Status Message */}
               {submitStatus.type && (
