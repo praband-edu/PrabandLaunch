@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
+  // 🔍 DEBUG: Add unique identifier to confirm this route is being hit
+  console.log("🔍 [ROUTE.TS] This Next.js route was called!");
+  console.log("🔍 [ROUTE.TS] Request URL:", request.url);
+  console.log("🔍 [ROUTE.TS] Request headers:", Object.fromEntries(request.headers.entries()));
+  
   try {
     const textData = await request.json();
 
@@ -29,7 +34,7 @@ export async function POST(request: NextRequest) {
       const errorText = await response.text();
       console.error("❌ External API error:", errorText);
       return NextResponse.json(
-        { error: "Failed to send message to Slack" },
+        { error: "Failed to send message to Slack", debug: "This error came from Next.js route.ts" },
         { status: response.status }
       );
     }
