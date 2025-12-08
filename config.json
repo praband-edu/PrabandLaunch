@@ -1,6 +1,6 @@
 {
   "phone": {
-    "enable": true,
+    "enable": false,
     "value": "+91 98765 43210"
   },
   "legal": {
