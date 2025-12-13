@@ -23,7 +23,7 @@ export default function HeroScrollDemo() {
       >
         <img
           src={`/DashboardMain.png`}
-          alt="hero"
+          alt="Praband Education Management System Dashboard - Comprehensive view of institutional management features"
           height={720}
           width={1400}
           className="mx-auto rounded-2xl object-cover h-full object-left-top"

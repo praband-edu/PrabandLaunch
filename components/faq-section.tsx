@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Shield, User, Link, BarChart, Clock, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { scrollReveal, staggerContainer, slideUp } from "@/lib/animations";
+import { getFAQSchema } from "@/lib/seo";
 
 interface FAQItem {
   id: number;
@@ -58,8 +59,24 @@ export default function FAQSection() {
     setExpandedId(expandedId === id ? null : id);
   };
 
+  // Generate FAQ schema for SEO
+  const faqSchema = getFAQSchema(
+    faqs.map((faq) => ({
+      question: faq.question,
+      answer: faq.answer,
+    }))
+  );
+
   return (
     <section id="faq" className="relative bg-gray-50 py-24 px-6 scroll-mt-20">
+      {/* FAQ Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      
       {/* Subtle curved pattern background */}
       <div 
         className="absolute inset-0 opacity-[0.02]" 

@@ -1,0 +1,19 @@
+{
+  "name": "Praband - AI-Powered Education Management",
+  "short_name": "Praband",
+  "description": "The all-in-one Education Management System for tuition teachers, coaching institutes, training centers, and colleges.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#003459",
+  "theme_color": "#00a7e1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

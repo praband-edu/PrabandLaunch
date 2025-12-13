@@ -269,7 +269,7 @@ export default function ProductivitySection() {
              <div className="bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 flex-1 flex flex-col justify-center relative">
                 <div className="flex justify-between items-start mb-2 sm:mb-3">
                    <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-                      <img src="https://i.pravatar.cc/150?u=1" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex-shrink-0" />
+                      <img src="https://i.pravatar.cc/150?u=1" alt="Ananya Verma" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex-shrink-0" />
                       <div className="min-w-0">
                         <div className="text-[10px] sm:text-xs font-bold text-slate-800 truncate">Ananya Verma</div>
                         <div className="text-[9px] sm:text-[10px] text-slate-400">Grade 10 - Science</div>
