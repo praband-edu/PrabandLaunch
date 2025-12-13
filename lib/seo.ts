@@ -31,7 +31,7 @@ export const SITE_CONFIG = {
   publisher: "Praband",
   locale: "en_US",
   type: "website",
-} as const;
+};
 
 /**
  * Generate structured data for Organization
