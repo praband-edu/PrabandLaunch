@@ -29,7 +29,7 @@ export const SITE_CONFIG = {
   author: "Praband",
   creator: "Praband",
   publisher: "Praband",
-  locale: "en_US",
+  locale: "en_IN",
   type: "website",
 };
 
